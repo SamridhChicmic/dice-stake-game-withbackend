@@ -1,0 +1,63 @@
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id                String   @id @default(cuid())
+  username             String             @unique
+  
+  password          String
+  OnRampTransaction OnRampTransaction[]
+  Balance           Balance[]
+  GameTransaction   GameTransaction[]
+  createdAt         DateTime @default(now())
+
+}
+
+model OnRampTransaction {
+  id        String   @id @default(cuid())
+  status    OnRampStatus
+  token     String       @unique
+  provider  String
+  amount    Int
+  userId    String
+  user      User         @relation(fields: [userId], references: [id])
+  createdAt DateTime     @default(now())
+  
+}
+model Balance {
+  id     String   @id @default(cuid())
+  userId String  @unique
+  amount Int     @default(0)
+  locked Int     @default(0)
+  user   User @relation(fields: [userId], references: [id])
+  
+
+ 
+
+}
+model GameTransaction {
+  id         String   @id @default(cuid())
+  status     Boolean
+  betAmount  Int
+  multiplier Int
+  payout     Int
+  userId     String
+  user       User         @relation(fields: [userId], references: [id])
+  createdAt  DateTime     @default(now())
+  
+}
+
+enum OnRampStatus {
+  Success
+  Failure
+  Processing
+}

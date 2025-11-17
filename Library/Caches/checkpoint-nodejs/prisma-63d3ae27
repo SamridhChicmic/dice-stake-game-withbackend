@@ -1,0 +1,30 @@
+{
+  "last_reminder": 0,
+  "cached_at": 1763372585125,
+  "version": "5.22.0",
+  "cli_path": "/Users/samridhgupta/Documents/React/gambling-stake/node_modules/prisma/build/index.js",
+  "output": {
+    "product": "prisma",
+    "previous_version": "5.22.0",
+    "checkpoint_version": 4,
+    "local_timestamp_without_timezone": "2025-11-17T15:13:04Z",
+    "current_version": "6.19.0",
+    "current_release_date": 1762347747,
+    "client_event_id": "d9059e4e-66d0-492d-baf9-f5bfa662c348",
+    "current_download_url": "https://github.com/prisma/prisma",
+    "package": "prisma",
+    "release_tag": "latest",
+    "install_command": "npm install --save-dev prisma",
+    "schema_providers": [
+      "postgresql"
+    ],
+    "schema_preview_features": [],
+    "schema_generators_providers": [
+      "prisma-client-js"
+    ],
+    "current_changelog_url": "https://github.com/prisma/prisma",
+    "outdated": true,
+    "project_website": "https://prisma.io",
+    "alerts": []
+  }
+}
